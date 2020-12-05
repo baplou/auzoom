@@ -18,3 +18,8 @@ def join_meeting(mt_id):
     command += f'  keystroke "{char}"\n'
   command += "  key code 36\n" + "end tell'"
   subprocess.run(command, shell=True)
+
+def quit_zoom():
+  command = "osascript -e 'tell application " + '"zoom.us"' + " to quit'"
+  subprocess.run(command, shell=True)
+  print("ignore the error sign above, applescript is weird")
