@@ -2,6 +2,7 @@ import os
 import platform
 
 if os.name == "posix" and platform.system() == "Darwin":
+  # only works on macos
   from auzoom.main import ZoomClient
 else:
   print("auzoom only works on MACOS")
