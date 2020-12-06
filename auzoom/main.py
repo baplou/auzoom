@@ -8,7 +8,7 @@ import time
 class ZoomClient:
   def __init__(self):
     subprocess.run("osascript -e 'activate application " + '"zoom.us"' + "'", shell=True)
-    time.sleep(4)
+    time.sleep(2)
 
   def join_meeting(self, mt_id, press_enter=True):
     mt_id = mt_id.replace(" ", "")
@@ -32,3 +32,15 @@ class ZoomClient:
     command = "osascript -e 'tell application " + '"zoom.us"' + " to quit'"
     subprocess.run(command, shell=True)
     print("ignore the error sign above, applescript is weird")
+
+  def start_meeting(self):
+    command = "osascript -e 'tell application " + '"System Events"\n  keystroke "v" using {command down, control down}\nend tell' + "'"
+    subprocess.run(command, shell=True)
+
+  def mic(self):
+    command = "osascript -e 'tell application " + '"System Events"\n  keystroke "a" using {command down, shift down}\nend tell' + "'"
+    subprocess.run(command, shell=True)
+
+  def camera(self):
+    command = "osascript -e 'tell application " + '"System Events"\n keystroke "v" using {command down, shift down}\nend tell' + "'"
+    subprocess.run(command, shell=True)
