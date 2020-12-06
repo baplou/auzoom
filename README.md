@@ -19,6 +19,12 @@ z.quit_zoom() # quits zoom
 * A feature activates zoom and simulates keystrokes that do what the feature says it's going to do
 * ONLY works on MACOS
 
+## Running the example
+```bash
+git clone https://github.com/baplou/auzoom.git
+cd auzoom; ./example.py
+```
+
 ## TODO
 * pip installation
 * more features
