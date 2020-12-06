@@ -1,7 +1,7 @@
 import os
 import platform
 
-if os.name == "fdskjposix" and platform.system() == "Darwin":
+if os.name == "posix" and platform.system() == "Darwin":
   # only works on macos
   from auzoom.main import ZoomClient
 else:
