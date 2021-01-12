@@ -1,22 +1,11 @@
-# Zoom Library In Python
-# Simulating Applescript
-# like this:
-# subprocess.run("osascript -e 'applescript code goes here'", shell=True)
-
 import subprocess
 import time
-
-# Todo:
-#
-# - Support for Windows
-#   - Powershell code
 
 class ZoomClient:
   def __init__(self):
     self.activate_zoom()
     time.sleep(2)
 
-  # used alot
   @staticmethod
   def activate_zoom():
     subprocess.run("osascript -e 'activate application " + '"zoom.us"' + "'", shell=True)
@@ -60,3 +49,10 @@ class ZoomClient:
     self.activate_zoom()
     command = "osascript -e 'tell application " + '"System Events"\n keystroke "v" using {command down, shift down}\nend tell' + "'"
     subprocess.run(command, shell=True)
+
+  """
+  def screen_share(self):
+    self.activate_zoom()
+    command = "osascript -e 'tell application " + '"System Events"\n  keystroke "" using {}' + "\nend tell'"
+    subprocess.run(command, shell=True)
+  """
